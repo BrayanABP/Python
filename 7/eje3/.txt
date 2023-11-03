@@ -1,0 +1,36 @@
+**Nombre del módulo o paquete**: `os`
+
+**Propósito**: Este módulo proporciona una forma portátil de utilizar las funcionalidades del sistema operativo, como la creación de directorios, la eliminación de archivos y la obtención de información sobre el sistema.
+
+**Lista de principales funciones**:
+- `os.getcwd()`: Devuelve el directorio de trabajo actual.
+- `os.listdir()`: Devuelve una lista de los archivos y directorios en un directorio determinado.
+- `os.mkdir(path)`: Crea un directorio con el nombre especificado.
+- `os.remove(path)`: Elimina el archivo especificado.
+- `os.rename(src, dst)`: Cambia el nombre del archivo o directorio especificado.
+- `os.path.join(path1[, path2[, ...]])`: Une uno o más componentes de ruta de acceso de forma inteligente.
+
+**Ejemplo en código de su utilización**:
+
+```python
+import os
+
+# Obtener el directorio de trabajo actual
+cwd = os.getcwd()
+print("Directorio de trabajo actual:", cwd)
+
+# Crear un directorio
+os.mkdir("mi_directorio")
+
+# Escribir un archivo en el directorio
+with open("mi_directorio/mi_archivo.txt", "w") as f:
+    f.write("¡Hola, mundo!")
+
+# Listar los archivos y directorios en el directorio actual
+print("Archivos y directorios en el directorio actual:", os.listdir(cwd))
+
+# Eliminar el archivo
+os.remove("mi_directorio/mi_archivo.txt")
+
+# Eliminar el directorio
+os.rmdir("mi_directorio")
